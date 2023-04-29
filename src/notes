@@ -1,0 +1,7 @@
+FUNKCJOINALNOSC:
+  Dodawanie nowych okie z zawartoscia: Godnosc, miejscowość, powiat, wojewodztwo, kod pocztowy i komentarz.
+  Szukanie i filtrowanie po kodzie pocztowym/powiecie.
+  Kopiowanie numeru .
+  Usuwanie danego okna jezeli klient juz nie jest zainteresowany.
+  Wpisywane adresy i godnosc automatycznie ma usuwane polskie znaki i ustawia piersza wielka litere.
+  Edycja.

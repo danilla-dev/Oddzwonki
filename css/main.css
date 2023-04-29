@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(to bottom, #7f858e, #bbbcbf, #d1d3d4, #a3a5a8, #6c7179), url("https://media.licdn.com/dms/image/D4D16AQG-_WYv-YYczQ/profile-displaybackgroundimage-shrink_200_800/0/1675296855966?e=2147483647&v=beta&t=Ix_nCvRHM-uHSxhXWISVl6BfZKtJa123Co_9jvN8jjQ");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  position: relative;
+  text-align: center;
+}
+header h1 {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 8rem;
+  color: #d1d3d4;
+}
+header .header-bg {
+  height: 200px;
+  background-image: url("../src/1675296855966.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.go-up-btn {
+  position: absolute;
+  top: 100px;
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
+  z-index: 100000;
+}
+
+.callbacks-container,
+.callback-search,
+.callbacks-creator {
+  background-color: #fffacd;
+  max-width: 600px;
+  min-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  border: 3px solid #d3cfa5;
+  font-size: 2rem;
+}
+
+.callbacks-container {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+.callbacks-creator {
+  display: flex;
+  flex-direction: column;
+}
+.callbacks-creator .creator {
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 0.5em;
+  border-bottom: 2px solid #e0d7b7;
+}
+.callbacks-creator .creator--error {
+  border: 3px solid red;
+}
+.callbacks-creator input {
+  padding: 0.4em;
+  min-width: 50%;
+  font-size: 1.6rem;
+}
+.callbacks-creator__buttons {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  margin-top: 2em;
+}
+.callbacks-creator__buttons-clear:hover {
+  background-color: tomato;
+}
+.callbacks-creator__buttons-add:hover {
+  background-color: greenyellow;
+}
+.callbacks-creator__buttons button {
+  padding: 0.5em 1em;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.callbacks-creator__comment textarea {
+  width: 70%;
+  max-width: 440px;
+  resize: none;
+  padding: 0.5em;
+}
+.callbacks-creator__counter {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1em;
+}
+
+.callback-search {
+  background-color: #fffacd;
+  border: 1px solid #d3cfa5;
+  padding: 0.5em;
+}
+.callback-search form {
+  display: flex;
+  justify-content: space-between;
+}
+.callback-search form p {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.callback-search form .search {
+  text-align: right;
+  width: 90%;
+}
+.callback-search form .search__input {
+  width: 70%;
+  padding: 0.5em;
+}
+.callback-search form .search__btn {
+  padding: 0.5em 1em;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.callback {
+  border: 1px solid #d3cfa5;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 2em 0;
+  background-color: #fffacd;
+}
+.callback .id {
+  display: none;
+}
+.callback__info {
+  margin: 0.4em 0;
+  word-wrap: break-word;
+  max-width: 80%;
+}
+.callback .info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 1em;
+  border-bottom: 2px solid #e0d7b7;
+  border-left: 0;
+  border-right: 0;
+}
+.callback .info-container__copy-btn {
+  padding: 0.5em 1em;
+  max-height: 35px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-radius: 20px;
+  border: 1px solid black;
+  margin: 0.5em 0;
+  transition: background-color 0.3s, opacity 0.2s;
+  cursor: pointer;
+  opacity: 0.1;
+}
+.callback .info-container__copy-btn:hover {
+  background-color: white;
+}
+.callback .info-container__delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 0;
+}
+.callback .info-container__delete-btn {
+  padding: 0.5em 1em;
+  max-height: 35px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-radius: 20px;
+  border: 1px solid black;
+  margin: 0.5em 0;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.callback .info-container__delete-btn:hover {
+  background-color: rgb(255, 44, 44);
+}
+.callback .info-container:hover button {
+  opacity: 1;
+}/*# sourceMappingURL=main.css.map */
