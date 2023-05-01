@@ -67,7 +67,6 @@ const createElement = (id, name, city, county, province, postCode, phone, commen
 const createStorageCallbacks = () => {
 	let storageCallbacks = JSON.parse(localStorage.getItem('callbacks')) || { callbacks: [] }
 	let callbackArray = storageCallbacks.callbacks
-	console.log(callbackArray)
 	callbackArray.forEach(el => {
 		createElement(el.id, el.name, el.city, el.county, el.province, el.postCode, el.phone, el.comment)
 	})

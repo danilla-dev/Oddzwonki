@@ -1,3 +1,5 @@
+@import 'colors';
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -28,6 +30,19 @@ header {
 		font-size: 8rem;
 		color: #d1d3d4;
 	}
+	p {
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 2rem;
+		color: white;
+		a {
+			padding: 0.1em;
+			text-decoration: none;
+			color: greenyellow;
+		}
+	}
 	.header-bg {
 		height: 200px;
 		background-image: url('../src/1675296855966.jpg');
@@ -35,39 +50,57 @@ header {
 		background-repeat: no-repeat;
 	}
 }
+button {
+	padding: 0.5em 1em;
+	border: 1px solid black;
+	border-radius: 20px;
+	max-height: 35px;
+	font-size: 1.4rem;
+	font-weight: bold;
+	transition: background-color 0.3s, opacity 0.2s;
+	cursor: pointer;
+}
 .go-up-btn {
-	position: absolute;
-	top: 100px;
-	background-color: transparent;
+	position: sticky;
+	top: 80%;
+	left: 90%;
 	border: none;
-	font-size: 3rem;
+	opacity: 0.1;
+	font-size: 5rem;
 	z-index: 100000;
+	background-color: transparent;
+	transition: opacity 0.2s;
+	&:hover {
+		opacity: 1;
+	}
 }
 .callbacks-container,
 .callback-search,
 .callbacks-creator {
-	background-color: #fffacd;
 	max-width: 600px;
 	min-width: 400px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 1em;
-	border: 3px solid #d3cfa5;
+	border: 3px solid $card-border;
+	border-radius: 20px;
+	background-color: $card-color;
 	font-size: 2rem;
 }
 .callbacks-container {
-	border: none;
 	padding: 0;
+	border: none;
 	background-color: transparent;
 }
 .callbacks-creator {
 	display: flex;
 	flex-direction: column;
+	margin-top: 0;
 	.creator {
 		display: inline-flex;
 		justify-content: space-between;
 		padding: 0.5em;
-		border-bottom: 2px solid #e0d7b7;
+		border-bottom: 2px solid $card-lines;
 		&--error {
 			border: 3px solid red;
 		}
@@ -82,7 +115,6 @@ header {
 		justify-content: space-evenly;
 		align-content: center;
 		margin-top: 2em;
-
 		&-clear {
 			&:hover {
 				background-color: tomato;
@@ -92,15 +124,6 @@ header {
 			&:hover {
 				background-color: greenyellow;
 			}
-		}
-		button {
-			padding: 0.5em 1em;
-			border: 1px solid black;
-			border-radius: 20px;
-			font-size: 1.6rem;
-			font-weight: bold;
-			cursor: pointer;
-			transition: background-color 0.3s;
 		}
 	}
 	&__comment {
@@ -118,9 +141,9 @@ header {
 	}
 }
 .callback-search {
-	background-color: #fffacd;
-	border: 1px solid #d3cfa5;
 	padding: 0.5em;
+	border: 1px solid $card-border;
+	background-color: $card-color;
 	form {
 		display: flex;
 		justify-content: space-between;
@@ -135,25 +158,16 @@ header {
 				width: 70%;
 				padding: 0.5em;
 			}
-			&__btn {
-				//////// stworzyc oddziwlna kklase dla przyciskow z tymi stylammi
-				padding: 0.5em 1em;
-				border: 1px solid black;
-				border-radius: 20px;
-				font-size: 1.6rem;
-				font-weight: bold;
-				cursor: pointer;
-				transition: background-color 0.3s;
-			}
 		}
 	}
 }
 .callback {
-	border: 1px solid #d3cfa5;
+	border-radius: 20px;
+	margin: 2em 0;
+	border: 1px solid $card-border;
 	font-size: 1.6rem;
 	font-weight: bold;
-	margin: 2em 0;
-	background-color: #fffacd;
+	background-color: $card-color;
 	.id {
 		display: none;
 	}
@@ -162,51 +176,35 @@ header {
 		word-wrap: break-word;
 		max-width: 80%;
 	}
-	.info-container {
+}
+.info-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5em 1em;
+	border-bottom: 2px solid $card-lines;
+	border-left: 0;
+	border-right: 0;
+	&__copy-btn {
+		margin: 0.5em 0;
+		opacity: 0.1;
+		&:hover {
+			background-color: white;
+		}
+	}
+	&__delete {
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
-		padding: 0.5em 1em;
-		border-bottom: 2px solid #e0d7b7;
-		border-left: 0;
-		border-right: 0;
-		&__copy-btn {
-			padding: 0.5em 1em;
-			max-height: 35px;
-			font-size: 1.4rem;
-			font-weight: bold;
-			border-radius: 20px;
-			border: 1px solid black;
+		justify-content: center;
+		padding: 1em 0;
+		&-btn {
 			margin: 0.5em 0;
-			transition: background-color 0.3s, opacity 0.2s;
-			cursor: pointer;
-			opacity: 0.1;
 			&:hover {
-				background-color: white;
+				background-color: rgb(255, 44, 44);
 			}
 		}
-		&__delete {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			padding: 1em 0;
-			&-btn {
-				padding: 0.5em 1em;
-				max-height: 35px;
-				font-size: 1.4rem;
-				font-weight: bold;
-				border-radius: 20px;
-				border: 1px solid black;
-				margin: 0.5em 0;
-				transition: background-color 0.3s;
-				cursor: pointer;
-				&:hover {
-					background-color: rgb(255, 44, 44);
-				}
-			}
-		}
-		&:hover button {
-			opacity: 1;
-		}
+	}
+	&:hover button {
+		opacity: 1;
 	}
 }

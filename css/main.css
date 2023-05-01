@@ -31,6 +31,19 @@ header h1 {
   font-size: 8rem;
   color: #d1d3d4;
 }
+header p {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: white;
+}
+header p a {
+  padding: 0.1em;
+  text-decoration: none;
+  color: greenyellow;
+}
 header .header-bg {
   height: 200px;
   background-image: url("../src/1675296855966.jpg");
@@ -38,37 +51,56 @@ header .header-bg {
   background-repeat: no-repeat;
 }
 
+button {
+  padding: 0.5em 1em;
+  border: 1px solid black;
+  border-radius: 20px;
+  max-height: 35px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  transition: background-color 0.3s, opacity 0.2s;
+  cursor: pointer;
+}
+
 .go-up-btn {
-  position: absolute;
-  top: 100px;
-  background-color: transparent;
+  position: sticky;
+  top: 80%;
+  left: 90%;
   border: none;
-  font-size: 3rem;
+  opacity: 0.1;
+  font-size: 5rem;
   z-index: 100000;
+  background-color: transparent;
+  transition: opacity 0.2s;
+}
+.go-up-btn:hover {
+  opacity: 1;
 }
 
 .callbacks-container,
 .callback-search,
 .callbacks-creator {
-  background-color: #fffacd;
   max-width: 600px;
   min-width: 400px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1em;
   border: 3px solid #d3cfa5;
+  border-radius: 20px;
+  background-color: #fffacd;
   font-size: 2rem;
 }
 
 .callbacks-container {
-  border: none;
   padding: 0;
+  border: none;
   background-color: transparent;
 }
 
 .callbacks-creator {
   display: flex;
   flex-direction: column;
+  margin-top: 0;
 }
 .callbacks-creator .creator {
   display: inline-flex;
@@ -96,15 +128,6 @@ header .header-bg {
 .callbacks-creator__buttons-add:hover {
   background-color: greenyellow;
 }
-.callbacks-creator__buttons button {
-  padding: 0.5em 1em;
-  border: 1px solid black;
-  border-radius: 20px;
-  font-size: 1.6rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
 .callbacks-creator__comment textarea {
   width: 70%;
   max-width: 440px;
@@ -118,9 +141,9 @@ header .header-bg {
 }
 
 .callback-search {
-  background-color: #fffacd;
-  border: 1px solid #d3cfa5;
   padding: 0.5em;
+  border: 1px solid #d3cfa5;
+  background-color: #fffacd;
 }
 .callback-search form {
   display: flex;
@@ -138,21 +161,13 @@ header .header-bg {
   width: 70%;
   padding: 0.5em;
 }
-.callback-search form .search__btn {
-  padding: 0.5em 1em;
-  border: 1px solid black;
-  border-radius: 20px;
-  font-size: 1.6rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
 
 .callback {
+  border-radius: 20px;
+  margin: 2em 0;
   border: 1px solid #d3cfa5;
   font-size: 1.6rem;
   font-weight: bold;
-  margin: 2em 0;
   background-color: #fffacd;
 }
 .callback .id {
@@ -163,7 +178,8 @@ header .header-bg {
   word-wrap: break-word;
   max-width: 80%;
 }
-.callback .info-container {
+
+.info-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -172,41 +188,25 @@ header .header-bg {
   border-left: 0;
   border-right: 0;
 }
-.callback .info-container__copy-btn {
-  padding: 0.5em 1em;
-  max-height: 35px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  border-radius: 20px;
-  border: 1px solid black;
+.info-container__copy-btn {
   margin: 0.5em 0;
-  transition: background-color 0.3s, opacity 0.2s;
-  cursor: pointer;
   opacity: 0.1;
 }
-.callback .info-container__copy-btn:hover {
+.info-container__copy-btn:hover {
   background-color: white;
 }
-.callback .info-container__delete {
+.info-container__delete {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1em 0;
 }
-.callback .info-container__delete-btn {
-  padding: 0.5em 1em;
-  max-height: 35px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  border-radius: 20px;
-  border: 1px solid black;
+.info-container__delete-btn {
   margin: 0.5em 0;
-  transition: background-color 0.3s;
-  cursor: pointer;
 }
-.callback .info-container__delete-btn:hover {
+.info-container__delete-btn:hover {
   background-color: rgb(255, 44, 44);
 }
-.callback .info-container:hover button {
+.info-container:hover button {
   opacity: 1;
 }/*# sourceMappingURL=main.css.map */

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,127 +9,114 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+  <script defer src="dist/bundle.js"></script>
   <title>Oddzwonki</title>
 </head>
 
-<body>
 
+<template class="callback-temp">
+  <div class="callback active">
+    <div class="id"></div>
+    <div class="info-container">
+      <div class="callback__name callback__info"></div>
+      <button class="info-container__copy-btn">Kopiuj</button>
+    </div>
+    <div class="info-container">
+      <div class="callback__city callback__info"></div>
+      <button class="info-container__copy-btn">Kopiuj</button>
+    </div>
+    <div class="info-container">
+      <div class="callback__county callback__info"></div>
+      <button class="info-container__copy-btn">Kopiuj</button>
+    </div>
+    <div class="info-container">
+      <div class="callback__province callback__info"></div>
+      <button class="info-container__copy-btn">Kopiuj</button>
+    </div>
+    <div class="info-container">
+      <div class="callback__post-code callback__info"></div>
+      <button class="info-container__copy-btn">Kopiuj</button>
+    </div>
+    <div class="info-container">
+      <div class="callback__phone callback__info"></div>
+      <button class="info-container__copy-btn">Kopiuj</button>
+    </div>
+    <div class="info-container">
+      <p class="callback__comment callback__info"></p>
+      <button class="info-container__copy-btn">Kopiuj</button>
+    </div>
+    <div class="info-container__delete">
+      <button class="info-container__delete-btn">Usuń</button>
+    </div>
+  </div>
+</template>
+
+
+
+<body>
   <header>
     <div class="header-bg">
+      <p>Created by <a href="https://github.com/danilla-dev">danilla-dev</a></p>
       <h1>CALLBACKS</h1>
     </div>
   </header>
-
-
-  <button class="go-up-btn">
-    <i class="fa-solid fa-circle-arrow-up"></i>
-  </button>
-  <div class="callbacks-creator">
-
-    <div class="callbacks-creator__name creator">
-      <label for="name">Imię i nazwisko: </label>
-      <input id="name" class="name" type="text">
-    </div>
-    <div class="callbacks-creator__phone-number creator">
-      <label for="phone">Numer telefonu: * </label>
-      <input id="phone" class="phone" type="number"
-        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-        maxlength="9">
-    </div>
-
-
-
-    <div class="callbacks-creator__city creator">
-      <label for="city">Miasto: </label>
-      <input id="city" class="city" type="text">
-    </div>
-
-    <div class="callbacks-creator__county creator">
-      <label for="county">Powiat: * </label>
-      <input id="county" class="county" type="text">
-    </div>
-
-    <div class="callbacks-creator__province creator">
-      <label for="province">Województwo: </label>
-      <input id="province" class="province" type="text">
-    </div>
-
-    <div class="callbacks-creator__post-code creator">
-      <label for="post-code">Kod pocztowy: </label>
-      <input id="post-code" class="post-code" type="text">
-    </div>
-
-
-    <div class="callbacks-creator__comment creator">
-      <label for="comment">Komentarz: </label>
-      <textarea name="comment" id="comment" cols="30" rows="10" class="comment"></textarea>
-    </div>
-
-    <div class="callbacks-creator__buttons">
-      <button class="callbacks-creator__buttons-clear">Wyczyść</button>
-      <button class="callbacks-creator__buttons-add">Dodaj</button>
-    </div>
-    <div class="callbacks-creator__counter">
-      <p>* - Pola wymagane</p>
-      <p>Ilość oddzwonek: <span class="counter"></span></p>
-    </div>
-  </div>
-
-  <div class="callback-search">
-    <form>
-      <p>Wyszukaj: </p>
-      <div class="search">
-        <input type="text" id="search" class="search__input">
-        <button class="search__btn">Szukaj</button>
+  <main>
+    <button class="go-up-btn">
+      <i class="fa-solid fa-circle-arrow-up"></i>
+    </button>
+    <div class="callbacks-creator">
+      <div class="callbacks-creator__name creator">
+        <label for="name">Imię i nazwisko: </label>
+        <input id="name" class="name" type="text">
       </div>
-    </form>
-  </div>
-
-  <div class="callbacks-container">
-    <template class="callback-temp">
-      <div class="callback active">
-        <div class="id"></div>
-        <div class="info-container">
-          <div class="callback__name callback__info"></div>
-          <button class="info-container__copy-btn">Kopiuj</button>
-        </div>
-        <div class="info-container">
-          <div class="callback__city callback__info"></div>
-          <button class="info-container__copy-btn">Kopiuj</button>
-        </div>
-        <div class="info-container">
-          <div class="callback__county callback__info"></div>
-          <button class="info-container__copy-btn">Kopiuj</button>
-        </div>
-        <div class="info-container">
-          <div class="callback__province callback__info"></div>
-          <button class="info-container__copy-btn">Kopiuj</button>
-        </div>
-        <div class="info-container">
-          <div class="callback__post-code callback__info"></div>
-          <button class="info-container__copy-btn">Kopiuj</button>
-        </div>
-        <div class="info-container">
-          <div class="callback__phone callback__info"></div>
-          <button class="info-container__copy-btn">Kopiuj</button>
-        </div>
-        <div class="info-container">
-          <p class="callback__comment callback__info"></p>
-          <button class="info-container__copy-btn">Kopiuj</button>
-        </div>
-
-        <div class="info-container__delete">
-          <button class="info-container__delete-btn">Usuń</button>
-        </div>
-
+      <div class="callbacks-creator__phone-number creator">
+        <label for="phone">Numer telefonu: * </label>
+        <input id="phone" class="phone" type="number"
+          oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          maxlength="9">
       </div>
-
-
-    </template>
-  </div>
-
-
-  <script src="dist/bundle.js"></script>
+      <div class="callbacks-creator__city creator">
+        <label for="city">Miasto: </label>
+        <input id="city" class="city" type="text">
+      </div>
+      <div class="callbacks-creator__county creator">
+        <label for="county">Powiat: * </label>
+        <input id="county" class="county" type="text" list="county-list">
+        <datalist id="county-list"></datalist>
+      </div>
+      <div class="callbacks-creator__province creator">
+        <label for="province">Województwo: </label>
+        <input id="province" class="province" type="text">
+      </div>
+      <div class="callbacks-creator__post-code creator">
+        <label for="post-code">Kod pocztowy: </label>
+        <input id="post-code" class="post-code" type="text" list="post-code-list">
+        <datalist id="post-code-list"></datalist>
+      </div>
+      <div class="callbacks-creator__comment creator">
+        <label for="comment">Komentarz: </label>
+        <textarea name="comment" id="comment" cols="30" rows="10" class="comment"></textarea>
+      </div>
+      <div class="callbacks-creator__buttons">
+        <button class="callbacks-creator__buttons-clear">Wyczyść</button>
+        <button class="callbacks-creator__buttons-add">Dodaj</button>
+      </div>
+      <div class="callbacks-creator__counter">
+        <p>* - Pola wymagane</p>
+        <p>Ilość oddzwonek: <span class="counter"></span></p>
+      </div>
+    </div>
+    <div class="callback-search">
+      <form>
+        <p>Wyszukaj: </p>
+        <div class="search">
+          <input type="text" id="search" class="search__input">
+          <button class="search__btn">Szukaj</button>
+        </div>
+      </form>
+    </div>
+    <div class="callbacks-container"></div>
+  </main>
 </body>
 
 </html>

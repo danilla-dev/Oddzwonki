@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "axios": "^1.4.0",
     "unidecode": "^0.1.8",
     "webpack": "^5.81.0",
     "webpack-cli": "^5.0.2"
