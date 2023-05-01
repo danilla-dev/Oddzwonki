@@ -4,5 +4,23 @@
     "unidecode": "^0.1.8",
     "webpack": "^5.81.0",
     "webpack-cli": "^5.0.2"
-  }
+  },
+  "name": "oddzwonki",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanillaKam/Oddzwonki.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanillaKam/Oddzwonki/issues"
+  },
+  "homepage": "https://github.com/DanillaKam/Oddzwonki#readme",
+  "description": ""
 }

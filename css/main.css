@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background: linear-gradient(to bottom, #7f858e, #bbbcbf, #d1d3d4, #a3a5a8, #6c7179), url("https://media.licdn.com/dms/image/D4D16AQG-_WYv-YYczQ/profile-displaybackgroundimage-shrink_200_800/0/1675296855966?e=2147483647&v=beta&t=Ix_nCvRHM-uHSxhXWISVl6BfZKtJa123Co_9jvN8jjQ");
+  background: linear-gradient(to bottom, #7f858e, #bbbcbf, #d1d3d4, #a3a5a8, #6c7179);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -46,7 +46,7 @@ header p a {
 }
 header .header-bg {
   height: 200px;
-  background-image: url("../src/1675296855966.jpg");
+  background-image: url("../../1675296855966.jpg");
   background-position: center;
   background-repeat: no-repeat;
 }
