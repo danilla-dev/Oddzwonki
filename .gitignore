@@ -1,12 +1,3 @@
 node_modules
 notes
-
-app.js
-createCallbacks.js
-filterCallbacks.js
-goUpBtn.js
-handleAPI.js
-handleCopyInfo.js
-handleCounter.js
-handleDeleteCallback.js
-
+/src/js
