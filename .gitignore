@@ -1,17 +1,17 @@
 node_modules/
 notes
-sr/js/app.js
+src/js/app.js
 
-sr/js/createCallbacks.js
+srcjs/createCallbacks.js
 
-sr/js/filterCallbacks.js
+src/js/filterCallbacks.js
 
-sr/js/goUpBtn.js
+src/js/goUpBtn.js
 
-sr/js/handleAPI.js
+src/js/handleAPI.js
 
-sr/js/handleCopyInfo.js
+src/js/handleCopyInfo.js
 
-sr/js/handleCounter.js
+src/js/handleCounter.js
 
-sr/js/handleDeleteCallback.js
+src/js/handleDeleteCallback.js
