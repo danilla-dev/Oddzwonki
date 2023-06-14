@@ -235,4 +235,8 @@ button {
   border: none;
   border-bottom: 1px solid black;
   background-color: transparent;
+}
+.info-container input:focus {
+  outline: transparent;
+  box-shadow: 0 0 3px rgba(1, 1, 17, 0.548);
 }/*# sourceMappingURL=main.css.map */
