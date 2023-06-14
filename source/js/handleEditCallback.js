@@ -19,13 +19,9 @@ const findCurrentCallback = (id, editedElement, value) => {
 const showInput = (element, info, buttons, event) => {
 	if (event.target.className === 'info-container__edit-btn') {
 		const input = document.createElement('input')
-		const cancelBtn = document.createElement('button')
-		cancelBtn.classList.add('info-container__cancel-btn')
-		cancelBtn.innerHTML = `<i class="fa-solid fa-x"></i>`
 		element.firstElementChild.remove()
 		element.firstElementChild.remove()
 		element.append(input)
-		element.append(cancelBtn)
 		input.focus()
 		input.addEventListener('keyup', e => {
 			editInfo(element, info, buttons, input, e)
@@ -36,15 +32,20 @@ const editInfo = (element, info, buttons, input, event) => {
 	if (event.key === 'Enter') {
 		const inputValue = input.value
 		input.remove()
+		console.log(info)
+		console.log(buttons)
 		element.append(info)
 		element.append(buttons)
 		info.textContent = inputValue
 		const elementID = element.parentElement.firstElementChild.innerText
 		const editedElement = element.firstElementChild.id
 		findCurrentCallback(elementID, editedElement, inputValue)
+	} else if (event.key === 'Escape') {
+		input.remove()
+		element.append(info)
+		element.append(buttons)
 	}
 }
-
 const getElementInfo = event => {
 	const e = event
 	const elementToEdit = event.target.parentElement.parentElement
