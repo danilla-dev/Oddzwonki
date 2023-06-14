@@ -190,7 +190,9 @@ button {
 	&__edit-btn {
 		margin: 0.5em 0;
 		opacity: 0.1;
+		transition: opacity 0.2s;
 		&:hover {
+			opacity: 1;
 			background-color: white;
 		}
 	}
@@ -206,9 +208,7 @@ button {
 			}
 		}
 	}
-	&:hover button {
-		opacity: 1;
-	}
+
 	input {
 		padding: 0.4em;
 		min-width: 50%;
