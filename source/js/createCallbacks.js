@@ -39,7 +39,6 @@ const createElement = (id, name, city, county, province, postCode, phone, commen
 	const callbackPhone = callback.querySelector('.callback__phone')
 	const callbackComment = callback.querySelector('.callback__comment')
 
-	console.log(callbackName.parentElement)
 	callbackid.textContent = id
 	callbackName.textContent = name === '' ? callbackName.parentElement.remove() : name
 	callbackCity.textContent = city === '' ? callbackCity.parentElement.remove() : city

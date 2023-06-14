@@ -1,8 +1,8 @@
 const container = document.querySelector('.callbacks-container')
 
 container.addEventListener('click', e => {
-	if (e.target.tagName === 'BUTTON') {
-		const info = e.target.previousElementSibling.innerText
+	if (e.target.className === 'info-container__copy-btn') {
+		const info = e.target.parentElement.previousElementSibling.innerText
 		navigator.permissions.query({ name: 'clipboard-write' }).then(result => {
 			if (result.state == 'granted' || result.state == 'prompt') {
 			}

@@ -186,7 +186,8 @@ button {
 	border-bottom: 2px solid $card-lines;
 	border-left: 0;
 	border-right: 0;
-	&__copy-btn {
+	&__copy-btn,
+	&__edit-btn {
 		margin: 0.5em 0;
 		opacity: 0.1;
 		&:hover {
@@ -207,5 +208,11 @@ button {
 	}
 	&:hover button {
 		opacity: 1;
+	}
+	input {
+		padding: 0.4em;
+		min-width: 50%;
+		width: 100%;
+		font-size: 1.6rem;
 	}
 }
