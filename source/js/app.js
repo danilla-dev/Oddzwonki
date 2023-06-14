@@ -5,5 +5,5 @@ import {} from './handleDeleteCallback.js'
 import {} from './handleCounter.js'
 import {} from './handleAPI.js'
 import {} from './goUpBtn.js'
-
+console.log('Just updated!')
 // node_modules/.bin/webpack
