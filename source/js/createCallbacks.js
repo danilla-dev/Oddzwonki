@@ -41,13 +41,13 @@ const createElement = (id, name, city, county, province, postCode, phone, commen
 
 	console.log(callbackName.parentElement)
 	callbackid.textContent = id
-	callbackName.textContent = name === '' && callbackName.parentElement.remove()
-	callbackCity.textContent = city === '' && callbackCity.parentElement.remove()
+	callbackName.textContent = name === '' ? callbackName.parentElement.remove() : name
+	callbackCity.textContent = city === '' ? callbackCity.parentElement.remove() : city
 	callbackCounty.textContent = county
-	callbackProvince.textContent = province === '' && callbackProvince.parentElement.remove()
-	callbackPostCode.textContent = postCode === '' && callbackPostCode.parentElement.remove()
+	callbackProvince.textContent = province === '' ? callbackProvince.parentElement.remove() : province
+	callbackPostCode.textContent = postCode === '' ? callbackPostCode.parentElement.remove() : postCode
 	callbackPhone.textContent = phone
-	callbackComment.textContent = comment === '' && callbackComment.parentElement.remove()
+	callbackComment.textContent = comment === '' ? callbackComment.parentElement.remove() : comment
 
 	if (saveSwitch == true) {
 		callbackid.textContent = findLastId() ? findLastId() + 1 : 1
