@@ -39,14 +39,15 @@ const createElement = (id, name, city, county, province, postCode, phone, commen
 	const callbackPhone = callback.querySelector('.callback__phone')
 	const callbackComment = callback.querySelector('.callback__comment')
 
+	console.log(callbackName.parentElement)
 	callbackid.textContent = id
-	callbackName.textContent = name
-	callbackCity.textContent = city
+	callbackName.textContent = name === '' && callbackName.parentElement.remove()
+	callbackCity.textContent = city === '' && callbackCity.parentElement.remove()
 	callbackCounty.textContent = county
-	callbackProvince.textContent = province
-	callbackPostCode.textContent = postCode
+	callbackProvince.textContent = province === '' && callbackProvince.parentElement.remove()
+	callbackPostCode.textContent = postCode === '' && callbackPostCode.parentElement.remove()
 	callbackPhone.textContent = phone
-	callbackComment.textContent = comment
+	callbackComment.textContent = comment === '' && callbackComment.parentElement.remove()
 
 	if (saveSwitch == true) {
 		callbackid.textContent = findLastId() ? findLastId() + 1 : 1
