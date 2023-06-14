@@ -1,9 +1,7 @@
 const container = document.querySelector('.callbacks-container')
 
 const saveInLocalStorage = (callbacks, callbackObject) => {
-	console.log(callbacks)
 	callbackObject.callbacks = callbacks
-	console.log(callbackObject)
 	localStorage.setItem('callbacks', JSON.stringify(callbackObject))
 }
 
@@ -21,9 +19,13 @@ const findCurrentCallback = (id, editedElement, value) => {
 const showInput = (element, info, buttons, event) => {
 	if (event.target.className === 'info-container__edit-btn') {
 		const input = document.createElement('input')
+		const cancelBtn = document.createElement('button')
+		cancelBtn.classList.add('info-container__cancel-btn')
+		cancelBtn.innerHTML = `<i class="fa-solid fa-x"></i>`
 		element.firstElementChild.remove()
 		element.firstElementChild.remove()
 		element.append(input)
+		element.append(cancelBtn)
 		input.focus()
 		input.addEventListener('keyup', e => {
 			editInfo(element, info, buttons, input, e)
