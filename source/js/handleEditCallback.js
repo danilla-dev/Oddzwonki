@@ -16,24 +16,20 @@ const findCurrentCallback = (id, editedElement, value) => {
 	saveInLocalStorage(allCallbacks, allCallbacksObject)
 }
 
-const showInput = (element, info, buttons, event) => {
-	if (event.target.className === 'info-container__edit-btn') {
-		const input = document.createElement('input')
-		element.firstElementChild.remove()
-		element.firstElementChild.remove()
-		element.append(input)
-		input.focus()
-		input.addEventListener('keyup', e => {
-			editInfo(element, info, buttons, input, e)
-		})
-	}
+const showInput = (element, info, buttons) => {
+	const input = document.createElement('input')
+	input.value = info.innerText
+	element.innerHTML = ''
+	element.append(input)
+	input.focus()
+	input.addEventListener('keyup', e => {
+		editInfo(element, info, buttons, input, e)
+	})
 }
 const editInfo = (element, info, buttons, input, event) => {
 	if (event.key === 'Enter') {
 		const inputValue = input.value
 		input.remove()
-		console.log(info)
-		console.log(buttons)
 		element.append(info)
 		element.append(buttons)
 		info.textContent = inputValue
@@ -47,10 +43,11 @@ const editInfo = (element, info, buttons, input, event) => {
 	}
 }
 const getElementInfo = event => {
-	const e = event
 	const elementToEdit = event.target.parentElement.parentElement
 	const elementToEditInfo = elementToEdit.firstElementChild
 	const elementToEditButtons = elementToEditInfo.nextElementSibling
-	showInput(elementToEdit, elementToEditInfo, elementToEditButtons, e)
+	if (event.target.className === 'info-container__edit-btn') {
+		showInput(elementToEdit, elementToEditInfo, elementToEditButtons)
+	}
 }
 container.addEventListener('click', getElementInfo)
