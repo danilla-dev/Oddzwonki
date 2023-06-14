@@ -190,7 +190,7 @@ button {
 }
 .info-container__copy-btn, .info-container__edit-btn {
   margin: 0.5em 0;
-  opacity: 0.1;
+  opacity: 0.3;
   transition: opacity 0.2s;
 }
 .info-container__copy-btn:hover, .info-container__edit-btn:hover {
