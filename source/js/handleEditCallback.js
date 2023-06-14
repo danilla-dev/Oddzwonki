@@ -15,7 +15,6 @@ const findCurrentCallback = (id, editedElement, value) => {
 			callback[editedElement] = value
 		}
 	})
-	console.log(allCallbacksObject)
 	saveInLocalStorage(allCallbacks, allCallbacksObject)
 }
 
@@ -25,6 +24,7 @@ const showInput = (element, info, buttons, event) => {
 		element.firstElementChild.remove()
 		element.firstElementChild.remove()
 		element.append(input)
+		input.focus()
 		input.addEventListener('keyup', e => {
 			editInfo(element, info, buttons, input, e)
 		})
@@ -37,7 +37,6 @@ const editInfo = (element, info, buttons, input, event) => {
 		element.append(info)
 		element.append(buttons)
 		info.textContent = inputValue
-		console.log('klik działa')
 		const elementID = element.parentElement.firstElementChild.innerText
 		const editedElement = element.firstElementChild.id
 		findCurrentCallback(elementID, editedElement, inputValue)
