@@ -21,3 +21,8 @@ const filterCallbacks = e => {
 }
 
 searchBtn.addEventListener('click', filterCallbacks)
+
+
+// na kazdy keyup bede chcail odswierzac kontener z oddzwonkami 
+// funkcja odswiezajaa 
+// funkcja sprawdzajaca co keypu wpisana wartosc i porownujaca ja z wpisanym powiatem 
