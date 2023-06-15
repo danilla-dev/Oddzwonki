@@ -154,11 +154,11 @@ button {
   margin-bottom: auto;
 }
 .callback-search form .search {
-  text-align: right;
+  text-align: center;
   width: 90%;
 }
 .callback-search form .search__input {
-  width: 70%;
+  width: 90%;
   padding: 0.5em;
 }
 

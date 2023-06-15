@@ -1,5 +1,4 @@
 const searchInput = document.querySelector('.search__input')
-const searchBtn = document.querySelector('.search__btn')
 
 const compareWithUserSearch = (allCounties, userSearch) => {
 	allCounties.forEach(county => {
@@ -25,6 +24,6 @@ const findAllCounties = e => {
 }
 
 
-searchBtn.addEventListener('click', findAllCounties)
+
 searchInput.addEventListener('keyup', findAllCounties)
 
