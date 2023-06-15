@@ -191,6 +191,7 @@ button {
 		margin: 0.5em 0;
 		opacity: 0.3;
 		transition: opacity 0.2s;
+		z-index: 10000;
 		&:hover {
 			opacity: 1;
 			background-color: white;
@@ -239,5 +240,11 @@ button {
 			outline: transparent;
 			box-shadow: 0 0 3px rgba(1, 1, 17, 0.548);
 		}
+	}
+	.edit-icon,
+	.copy-btn {
+		width: 20px;
+		height: 20px;
+		z-index: 10;
 	}
 }

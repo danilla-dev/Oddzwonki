@@ -43,10 +43,11 @@ const editInfo = (element, info, buttons, input, event) => {
 	}
 }
 const getElementInfo = event => {
-	const elementToEdit = event.target.parentElement.parentElement
-	const elementToEditInfo = elementToEdit.firstElementChild
-	const elementToEditButtons = elementToEditInfo.nextElementSibling
-	if (event.target.className === 'info-container__edit-btn') {
+	const buttonClass = 'info-container__edit-btn'
+	if (event.target.className === 'edit-icon' || event.target.className === buttonClass) {
+		const elementToEdit = event.target.closest('.info-container')
+		const elementToEditInfo = elementToEdit.firstElementChild
+		const elementToEditButtons = elementToEditInfo.nextElementSibling
 		showInput(elementToEdit, elementToEditInfo, elementToEditButtons)
 	}
 }

@@ -192,6 +192,7 @@ button {
   margin: 0.5em 0;
   opacity: 0.3;
   transition: opacity 0.2s;
+  z-index: 10000;
 }
 .info-container__copy-btn:hover, .info-container__edit-btn:hover {
   opacity: 1;
@@ -239,4 +240,10 @@ button {
 .info-container input:focus {
   outline: transparent;
   box-shadow: 0 0 3px rgba(1, 1, 17, 0.548);
+}
+.info-container .edit-icon,
+.info-container .copy-btn {
+  width: 20px;
+  height: 20px;
+  z-index: 10;
 }/*# sourceMappingURL=main.css.map */
