@@ -2,8 +2,8 @@ import { countActiveCallbacks } from './handleCounter.js'
 const container = document.querySelector('.callbacks-container')
 
 container.addEventListener('click', e => {
-	if (e.target.className === 'info-container__delete-btn') {
-		const callback = e.target.parentElement.parentNode
+	if (e.target.className === 'info-container__delete-btn' || e.target.className === 'delete-icon') {
+		const callback = e.target.closest('.callback')
 		const id = callback.firstElementChild.innerText
 		let storageCallbacks = JSON.parse(localStorage.getItem('callbacks')).callbacks
 

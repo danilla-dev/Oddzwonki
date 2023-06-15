@@ -177,6 +177,11 @@ button {
 		word-wrap: break-word;
 		max-width: 80%;
 	}
+	.delete-icon {
+		width: 20px;
+		height: 20px;
+		z-index: 10;
+	}
 }
 .info-container {
 	display: flex;
