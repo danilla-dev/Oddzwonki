@@ -242,7 +242,7 @@ button {
   box-shadow: 0 0 3px rgba(1, 1, 17, 0.548);
 }
 .info-container .edit-icon,
-.info-container .copy-btn {
+.info-container .copy-icon {
   width: 20px;
   height: 20px;
   z-index: 10;
