@@ -1,28 +1,30 @@
 const searchInput = document.querySelector('.search__input')
 const searchBtn = document.querySelector('.search__btn')
 
-const filterCallbacks = e => {
-	e.preventDefault()
-	const allCallBacks = document.querySelectorAll('.callback')
-	const searchCallback = searchInput.value.toLowerCase()
-	allCallBacks.forEach(callback => {
-		const callbackCounty = callback.children[3].children[0].innerText.toLowerCase()
-		if (searchCallback == '') {
-			callback.style.display = 'block'
-			
-		} else if (callbackCounty != searchCallback) {
+const compareWithUserSearch = (allCounties, userSearch) => {
+	allCounties.forEach(county => {
+		const callback = county.closest('.callback')
+		if (
+			!county.innerText.toLowerCase().includes(userSearch.toLowerCase()) ||
+			!county.innerText.toLowerCase() === userSearch.toLowerCase
+		) {
 			callback.style.display = 'none'
 			callback.classList.remove('active')
 		} else {
 			callback.style.display = 'block'
-		
+			callback.classList.add('active')
 		}
 	})
 }
 
-searchBtn.addEventListener('click', filterCallbacks)
+const findAllCounties = e => {
+	e.preventDefault()
+	const searchCallback = e.target.value
+	const allCountiesOfCallbacks = document.querySelectorAll('.callback__county')
+	compareWithUserSearch(allCountiesOfCallbacks, searchCallback)
+}
 
 
-// na kazdy keyup bede chcail odswierzac kontener z oddzwonkami 
-// funkcja odswiezajaa 
-// funkcja sprawdzajaca co keypu wpisana wartosc i porownujaca ja z wpisanym powiatem 
+searchBtn.addEventListener('click', findAllCounties)
+searchInput.addEventListener('keyup', findAllCounties)
+
