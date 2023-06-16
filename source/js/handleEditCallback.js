@@ -23,43 +23,54 @@ const findCurrentCallback = (id, editedElement, value) => {
 	saveInLocalStorage(allCallbacks, allCallbacksObject)
 }
 
-const showInput = (element, info, buttons) => {
+const removeInput = el => {
+	const { element, info, buttons, input } = el
+	input.remove()
+	element.append(info)
+	element.append(buttons)
+}
+
+const editInfo = el => {
+	const { element, info, buttons, input } = el
+	const inputValue = unidecode(input.value).capitalize()
+	input.remove()
+	element.append(info)
+	element.append(buttons)
+	info.textContent = inputValue
+	const elementID = element.parentElement.firstElementChild.innerText
+	const editedElement = element.firstElementChild.id
+	findCurrentCallback(elementID, editedElement, inputValue)
+}
+
+const showInput = el => {
+	const { element, info, buttons } = el
 	const input = document.createElement('input')
 	input.value = info.innerText
 	element.innerHTML = ''
 	element.append(input)
 	input.focus()
-	input.addEventListener('keyup', e => {
-		editInfo(element, info, buttons, input, e)
+
+	input.addEventListener('keyup', event => {
+		const el = { element, info, buttons, input }
+		if (event.key === 'Enter') {
+			editInfo(el)
+		} else if (event.key === 'Escape') {
+			removeInput(el)
+		}
 	})
 }
-const editInfo = (element, info, buttons, input, event) => {
-	if (event.key === 'Enter') {
-		const inputValue = input.value
-		input.remove()
-		element.append(info)
-		element.append(buttons)
-		info.textContent = unidecode(inputValue).capitalize()
-		const elementID = element.parentElement.firstElementChild.innerText
-		const editedElement = element.firstElementChild.id
-		findCurrentCallback(elementID, editedElement, inputValue)
-	} else if (event.key === 'Escape') {
-		input.remove()
-		element.append(info)
-		element.append(buttons)
-	}
-}
+
 const getElementInfo = event => {
 	const buttonClass = 'info-container__edit-btn'
 	if (event.target.className === 'edit-icon' || event.target.className === buttonClass) {
 		const elementToEdit = event.target.closest('.info-container')
-		const elementToEditInfo = elementToEdit.firstElementChild
-		const elementToEditButtons = elementToEditInfo.nextElementSibling
-		showInput(elementToEdit, elementToEditInfo, elementToEditButtons)
+		const elementToEditInfo = elementToEdit.querySelector('.callback__info')
+		const elementToEditButtons = elementToEditInfo.querySelector('.edit-buttons')
+		const el = { element: elementToEdit, info: elementToEditInfo, buttons: elementToEditButtons }
+		// element is a element of callback where user want do editing
+		// info is a last editing value
+		// buttons is a elements of a buttons - edit and copy
+		showInput(el)
 	}
 }
 container.addEventListener('click', getElementInfo)
-
-/// DODAC FORMATOWANIE EDYTOWANEGO TEKSTU W TAKI SAM SPOSOB JAK JEST TO PODCZAS TWORZENIA ELEMENTU
-/// LEPSZE WYSZUKIWANIE - PODCZAS WPISYWANIA AKTUALIZUJE SIE CALA TA KARTA I REAGUJE TO NA KAZDA WPISANA LITERKE
-/// POLEPSZYC JAKOS WYGLAD TEJ APKI
