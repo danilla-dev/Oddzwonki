@@ -28,7 +28,8 @@ const findLastId = () => {
 	}
 }
 
-const createElement = (id, name, city, county, province, postCode, phone, comment) => {
+const createElement = el => {
+	const { id, name, city, county, province, postCode, phone, comment } = el
 	const callback = callbackTemp.content.cloneNode(true)
 	const callbackid = callback.querySelector('.id')
 	const callbackName = callback.querySelector('.callback__name')
@@ -68,7 +69,7 @@ const createStorageCallbacks = () => {
 	let storageCallbacks = JSON.parse(localStorage.getItem('callbacks')) || { callbacks: [] }
 	let callbackArray = storageCallbacks.callbacks
 	callbackArray.forEach(el => {
-		createElement(el.id, el.name, el.city, el.county, el.province, el.postCode, el.phone, el.comment)
+		createElement(el)
 	})
 }
 
@@ -124,24 +125,15 @@ const checkForm = input => {
 const createNewCallback = async () => {
 	saveSwitch = true
 	const id = findLastId() ? findLastId() : 0
-	const name = unidecode(document.querySelector('.name').value)
-	const city = unidecode(document.querySelector('.city').value)
-	const county = unidecode(document.querySelector('.county').value)
-	const province = unidecode(document.querySelector('.province').value)
+	const name = unidecode(document.querySelector('.name').value).capitalize()
+	const city = unidecode(document.querySelector('.city').value).capitalize()
+	const county = unidecode(document.querySelector('.county').value).capitalize()
+	const province = unidecode(document.querySelector('.province').value).capitalize()
 	const postCode = unidecode(document.querySelector('.post-code').value)
 	const phone = unidecode(document.querySelector('.phone').value)
 	const comment = unidecode(document.querySelector('.comment').value)
-
-	createElement(
-		id,
-		name.capitalize(),
-		city.capitalize(),
-		county.capitalize(),
-		province.capitalize(),
-		postCode,
-		phone,
-		comment
-	)
+	const el = { id, name, city, county, province, postCode, phone, comment }
+	createElement(el)
 	clearForm()
 }
 

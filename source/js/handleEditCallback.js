@@ -1,4 +1,11 @@
 const container = document.querySelector('.callbacks-container')
+const unidecode = require('../../node_modules/unidecode/unidecode.js')
+
+String.prototype.capitalize = function () {
+	return this.replace(/\b\w/g, function (match) {
+		return match.toUpperCase()
+	})
+}
 
 const saveInLocalStorage = (callbacks, callbackObject) => {
 	callbackObject.callbacks = callbacks
@@ -32,7 +39,7 @@ const editInfo = (element, info, buttons, input, event) => {
 		input.remove()
 		element.append(info)
 		element.append(buttons)
-		info.textContent = inputValue
+		info.textContent = unidecode(inputValue).capitalize()
 		const elementID = element.parentElement.firstElementChild.innerText
 		const editedElement = element.firstElementChild.id
 		findCurrentCallback(elementID, editedElement, inputValue)
